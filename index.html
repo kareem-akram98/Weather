@@ -1,0 +1,288 @@
+<!--  
+  Weather app Assignment for Route Front-End Diploma
+  imitating -> https://routeweather.netlify.app/
+-->
+<!-- 
+  Name      : Kareem Akram
+  Group     : Web C43 Friday 3pm Alex onsite (offline)
+  Assignment: Assignment 012 (Weather app)
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ! Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- ! Font Awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- ! Main CSS -->
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Weather</title>
+  </head>
+  <body>
+    <!-- ! Navbar -->
+    <div class="navBar-container py-2">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="logo-container">
+              <img
+                src="./images/logo.png"
+                alt="Weather logo"
+                width="64"
+                height="38"
+              />
+              <div class="sub-logo text-black">
+                <p class="fw-semibold">Weather</p>
+                <p><i>Weather Forecast</i></p>
+              </div>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="fas fa-bars text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul
+                class="navbar-nav ms-auto text-center mb-2 mb-lg-0 nav-links-list"
+              >
+                <li class="nav-item mt-2 mt-lg-0">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mt-2 mt-lg-0">
+                  <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item mt-2 mt-lg-0">
+                  <a class="nav-link" href="#">Live cameras</a>
+                </li>
+                <li class="nav-item mt-2 mt-lg-0">
+                  <a class="nav-link" href="#">Photos</a>
+                </li>
+                <li class="nav-item mt-2 mt-lg-0">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <!-- ! Weather App -->
+     <section id="bgImg">
+    <section class="weather-app py-5">
+      <div class="container border-2 rounded-4 py-3 px-4">
+        <div class="search-row row">
+          <div class="col-lg-8">
+            <div class="inner">
+              <p id="demo"></p>
+
+              <input
+                aria-label="Search for cities"
+                type="text"
+                class="form-control w-100"
+                placeholder="Search for cities"
+                id="cityInput"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="forecast-row row mt-3">
+          <div class="col-lg-8">
+            <div class="inner rounded-4 d-flex flex-column gap-4">
+              <!-- ! ================ NOW ================ ! -->
+              <div
+                class="now position-relative clear-bg px-2 py-5 p-md-5 rounded-4 d-flex justify-content-around align-items-center flex-wrap g-3"
+              >
+                <!-- <p class="position-absolute now-now">NOW</p>
+
+                <div class="now-text p-2">
+                  <h2 id="htmlLocation">City</h2>
+                </div>
+                <div class="now-degree p-2">
+                  <h2><span id="htmlCurrentTemp">00&deg</span></h2>
+                </div>
+                <div class="now-img p-2">
+                  <img
+                    id="htmlCurrentConditionIMG"
+                    class="mx-auto"
+                    src="https://fakeimg.pl/60x60"
+                    alt="Weather condition"
+                  />
+                  <p id="htmlCurrentCondition" class="text-center">Condition</p>
+                </div> -->
+              </div>
+              <!-- ! ================ hourly ================ ! -->
+              <div class="hourly clear-bg rounded-4 p-3">
+                <p>TODAY'S FORECAST</p>
+                <ul
+                  class="hourly-list mt-2 list-unstyled text-center d-flex justify-content-around flex-wrap gap-3"
+                >
+                  <!-- ! Generated li
+                <li>
+                    <div id="hour1Time" class="hour-head">00</div>
+                    <div class="hour-body">
+                      <img
+                        id="hour1IMG"
+                        src="https://fakeimg.pl/60x60"
+                        alt="hour condition"
+                      />
+                    </div>
+                    <div class="hour-footer">
+                      <span id="hour1Temp">00</span>&deg;
+                    </div>
+                  </li> 
+                  ! -->
+                </ul>
+              </div>
+              <!-- ! additional-info ! -->
+              <div class="additional-info">
+                <!-- <div class="row text-center">
+                  <div class="col-sm-6 pb-2">
+                    <div class="inner clear-bg rounded-4">
+                      <h4 class="h5">
+                        <i class="fa-solid fa-temperature-half"></i> Real Feel
+                      </h4>
+                      <p class="mt-3"><span id="htmlRealFeel">00</span>&deg;</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pb-2">
+                    <div class="inner clear-bg rounded-4">
+                      <h4 class="h5"><i class="fas fa-wind"></i> Wind</h4>
+                      <p class="mt-3">
+                        <span id="htmlWindSpeed">00</span> km/h
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pb-2">
+                    <div class="inner clear-bg rounded-4">
+                      <h4 class="h5">
+                        <i
+                          class="fa-solid fa-down-left-and-up-right-to-center fa-rotate-by"
+                          style="--fa-rotate-angle: 135deg"
+                        ></i>
+                        Pressure
+                      </h4>
+                      <p class="mt-3"><span id="htmlPressure">0000</span> mb</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pb-2">
+                    <div class="inner clear-bg rounded-4">
+                      <h4 class="h5"><i class="fas fa-sun"></i> UV Index</h4>
+                      <p class="mt-3"><span id="htmlUV">0</span></p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="inner clear-bg p-4 rounded-4 h-100 d-flex flex-column">
+              <h3 class="text-center">3-DAY FORECAST</h3>
+              <ul
+                class="week-list list-unstyled flex-grow-1 d-flex flex-column justify-content-around gap-2"
+              >
+                <!-- ! Generated li
+              <li class="d-flex justify-content-between align-items-center">
+                  <div class="day">Today</div>
+                  <div class="condition d-flex align-items-center gap-2">
+                    <img
+                      src="https://fakeimg.pl/60x60"
+                      alt="weather condition"
+                    />
+                    <p>sunny</p>
+                  </div>
+                  <div class="max-min">36/22</div>
+                </li>
+                ! -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ! Footer -->
+    <footer class="py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-lg-4 offset-lg-2">
+            <div class="inner position-relative">
+              <input
+                type="email"
+                class="form-control rounded-5"
+                placeholder="Enter your email to subscribe..."
+              />
+              <button
+                class="btn bg-primary text-white rounded-5 position-absolute"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+          <div class="mt-4 mt-md-0 col-md-6 col-lg-4">
+            <div class="inner">
+              <ul class="list-unstyled d-flex gap-3 justify-content-center">
+                <li>
+                  <a href="#">
+                    <div class="icon-container">
+                      <i class="fab fa-facebook-f"></i>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <div class="icon-container">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <div class="icon-container">
+                      <i class="fab fa-google-plus-g"></i>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <div class="icon-container">
+                      <i class="fab fa-pinterest"></i>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-2 text-white">
+          Copyright 2014 Company name. Designed by Themezy. All rights reserved
+        </p>
+      </div>
+    </footer>
+</section>
+    <!-- * Scripts -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

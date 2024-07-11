@@ -1,0 +1,206 @@
+/*----------------------------------------
+
+    Project: Weather App
+    
+    CSS INDEX
+    ===================
+    00. Global
+    01. Utilities
+    02. NavBar
+    03. Weather Section
+    04. Footer
+
+----------------------------------------*/
+
+/*----------------------------------------
+  00. Global
+----------------------------------------*/
+
+@font-face {
+  font-family: "Rubik";
+  src: url("fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --primary-clr: #0d6efd;
+  --bg-color: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  font-family: Rubik, sans-serif;
+  background: url(../images/body-bg.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+img {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+}
+input.form-control:focus {
+  box-shadow: none;
+}
+a {
+  text-decoration: none;
+}
+/*----------------------------------------
+  01. Utilities
+----------------------------------------*/
+
+.clear-bg {
+  background-color: var(--bg-color);
+}
+
+/*----------------------------------------
+  02. NavBar
+----------------------------------------*/
+.navBar-container {
+  background-color: var(--bg-color);
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.logo-container {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sub-logo p:nth-child(1) {
+  font-size: 20px;
+}
+.sub-logo p:nth-child(2) {
+  font-size: 12px;
+}
+
+.navbar-brand {
+  --bs-navbar-brand-color: #fff;
+}
+a.nav-link {
+  --bs-nav-link-color: var(--primary-clr);
+  --bs-navbar-active-color: #fff;
+  --bs-nav-link-hover-color: #fff;
+  background-color: var(--bg-color);
+}
+
+.nav-links-list a {
+  --bs-navbar-nav-link-padding-x: 25px;
+  --bs-nav-link-font-size: 0.875rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+.nav-links-list a:hover,
+.nav-links-list a.active {
+  background-color: var(--primary-clr);
+}
+.nav-links-list a:hover {
+  transform: scale(1.05);
+}
+
+button.navbar-toggler {
+  border: none;
+}
+button.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/*----------------------------------------
+  03. Weather Section
+----------------------------------------*/
+
+.weather-app .container {
+  backdrop-filter: blur(20px);
+    box-shadow: 0 0 8px 3px #344d66;
+}
+.hourly {
+  height: 172px;
+  overflow: hidden;
+}
+.additional-info .row > div {
+  display: flex;
+  justify-content: center;
+}
+.additional-info .inner {
+  padding: 10px;
+  min-width: 175px;
+}
+
+.now h2 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.now-now {
+  left: 1rem;
+  top: 1rem;
+}
+
+.hour-white-line:not(:last-child) {
+  height: 70px;
+  width: 1px;
+  background-color: #fff;
+  transform: translateY(30%);
+}
+
+.week-list .day {
+  text-align: center;
+  width: 44px;
+}
+.week-white-line:not(:last-child) {
+  width: 70px;
+  height: 1px;
+  background-color: #fff;
+}
+.additional-info p {
+  font-size: 1.125rem;
+}
+.week-condition {
+  width: 50px;
+  text-align: center;
+}
+/*----------------------------------------
+  04. Footer
+----------------------------------------*/
+footer {
+  /* backdrop-filter: blur(20px); */
+}
+footer input[type="email"] {
+  padding: 0.6rem 0.75rem;
+}
+
+footer button {
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.icon-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--primary-clr);
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+}
+footer a {
+  color: #fff;
+}
+
+.icon-container:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+.icon-container:hover i {
+  color: var(--primary-clr);
+}
