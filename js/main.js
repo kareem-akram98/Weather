@@ -11,7 +11,7 @@ cityInput.addEventListener('input', function () {
 
 async function getWeather(search) {
     try {
-        let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=c5ca6bd4da9b4fb9ae1174812242506&q=${search}&days=3`)
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c5ca6bd4da9b4fb9ae1174812242506&q=${search}&days=3`)
         let finalResponse = await response.json()
         console.log(finalResponse);
         console.log(finalResponse.current.condition);
